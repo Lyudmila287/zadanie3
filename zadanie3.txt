@@ -1,0 +1,82 @@
+using System;
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+    }
+    static void mass1() //zadanie 1
+    {
+        double[] mas = new double[] { 14, 45, 5, 1, -56 };
+        double d = double.MaxValue;
+        int index = 0;
+        for (int i = 0; i < mas.Length; ++i)
+        {
+            double temp = Math.Abs(mas[i]);
+            if (d > temp)
+            {
+                d = temp;
+                index = i;
+            }
+        }
+        Console.WriteLine(index);
+        Console.ReadKey();
+    }
+    static void mass2() // zadanie 2
+    {
+       int b;
+        int f;
+        Console.WriteLine("¬ведите кол-во чисел");
+        b = Convert.ToInt32(Console.ReadLine());
+        int[] a = new int[b];
+        Console.WriteLine("¬ведите массив");
+        for (int i = 0; i <=b; i++)
+        {
+            a[i] = Convert.ToInt32(Console.ReadLine());      
+        }
+        for (int i = 0; i <= b; i++)
+        {
+            f = 1;
+            for (int j = 0; j <= b; j++)
+            {
+                if (a[i] == a[j] || i!=j)
+                {
+                    f = 0;
+                    break;
+                }
+                if(f==1)
+                {
+                    Console.WriteLine(a[i]);
+                }
+
+            }
+        }
+        Console.ReadKey();
+    }
+    static void mass3() // zadanie 3
+    {
+       int b; 
+        Console.WriteLine("¬ведите кол-во чисел");
+        b = Convert.ToInt32(Console.ReadLine());
+        int[] h = new int[b];
+        Random rand = new Random();
+        for (int i = 0; i <b; i++)
+        {
+            h[i]= rand.Next(-10,10);
+            Console.Write(h[i]);
+            Console.Write(" ");
+        }
+        Console.WriteLine();
+        for (int i = 0; i < b; i++)
+        {
+          if (h[i] >= 0)
+            {
+                Console.Write(h[i]);
+                Console.Write(" ");
+            }  
+        }
+        Console.ReadKey();
+    }
+}
